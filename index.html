@@ -1,0 +1,102 @@
+<html>
+<head>
+	<title>
+		Simple chat bot
+	</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/w3.css">	
+	<head>
+		<body>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">						
+					</div>
+					<div class="col-md-6 w3-card-2"style="border:1px solid grey">
+						
+					<!-- <form class="actions "> -->
+						
+						<div class="" id="message" style="padding: 8px">
+							
+						
+						</div>
+						<div class="form-group" >
+							<div class="row " >
+								<div class="col-md-10">
+								<input type="text" id="myText" class="form-control" placeholder="enter message" name="message" style="margin-top: 14px: ">
+								</div>	
+								<div class="col-md-2">
+								<button onclick="myFunction()"  class="btn btn-default w3-right">Send</button>
+									
+								</div>
+							</div>
+							
+						</div>
+					<!-- </form> -->
+					</div>
+
+					<div class="col-md-3">
+						
+					</div>
+			</div>
+			</div>
+			<script>
+					function myFunction() {
+					  var x = document.getElementById("myText").value;
+					  // document.getElementById("mymessage").innerHTML = x;	
+					  	  var div = document.createElement("div");
+						div.style.width = "250px";
+						div.style.padding = "10px";
+						div.style.borderRadius="10px";
+						div.style.float="right";
+						div.style.boxShadow="0 4px 8px 0 rgba(0,0,0,0.2)";
+						div.style.margin = "10px";				
+						div.innerHTML = x;
+						div.classList.add("w3-right");
+						document.getElementById("message").appendChild(div);			
+					  
+					  switch (x) {
+					  case "hello":
+					    day = "Sunday";
+					    break;
+					  case 1:
+					    day = "Monday";
+					    break;
+					  case 2:
+					    day = "Tuesday";
+					    break;
+					  case 3:
+					    day = "Wednesday";
+					    break;
+					  case 4:
+					    day = "Thursday";
+					    break;
+					  case 5:
+					    day = "Friday";
+					    break;
+					  case  6:
+					    day = "Saturday";
+					   default:
+					   day ="Didnt get that!"
+					    
+					}
+					  var div = document.createElement("div");
+						div.style.width = "250px";
+						div.style.padding = "10px";
+						div.style.borderRadius="10px";
+						div.style.float="left";
+						div.style.boxShadow="0 4px 8px 0 rgba(0,0,0,0.2)";
+						div.style.margin = "10px";				
+						div.innerHTML = day;
+						day="";
+						div.classList.add("w3-left");
+
+				document.getElementById("message").appendChild(div);
+			
+
+					}
+</script>
+			<script type="text/javascript " src="js/jquery-3.3.1.min.js"></script>
+			<script type="text/javascript " src="js/bootstrap.min.js"></script>
+
+		</body>
+	</head>
