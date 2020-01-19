@@ -6,7 +6,14 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/w3.css">	
 	<head>
-		<body>
+		<body onload="openForm()">
+			<div id="popsi" max-width: 300px; padding: 10px; background-color: white; >
+					<script>
+							function openForm() {
+							  document.getElementById("popsi").style.display = "block";
+							}
+							
+							</script>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3">						
@@ -22,11 +29,10 @@
 						<div class="form-group" >
 							<div class="row " >
 								<div class="col-md-10">
-								<input type="text" id="myText" class="form-control" placeholder="enter message" name="message" style="margin-top: 14px: ">
+								<input  type="text" id="myText" class="form-control" placeholder="enter message" name="message" style="margin-top: 0px; ">
 								</div>	
 								<div class="col-md-2">
-								<button onclick="myFunction()"  class="btn btn-default w3-right">Send</button>
-									
+								<button onclick="myFunction()"  class="btn btn-default w3-right" style="margin-top: 0px;">Send</button>			
 								</div>
 							</div>
 							
@@ -39,36 +45,40 @@
 					</div>
 			</div>
 			</div>
+		</div>
 			<script>
 					function myFunction() {
 					  var x = document.getElementById("myText").value;
+
 					  // document.getElementById("mymessage").innerHTML = x;	
 					  	  var div = document.createElement("div");
 						div.style.width = "250px";
+						div.style.textEmphasisColor = "rgb(0,0,255)"
 						div.style.padding = "10px";
 						div.style.borderRadius="10px";
 						div.style.float="right";
 						div.style.boxShadow="0 4px 8px 0 rgba(0,0,0,0.2)";
-						div.style.margin = "10px";				
+						div.style.margin = "10px";
+						div.style.backgroundColor = "rgb(0,0,200)"				
 						div.innerHTML = x;
 						div.classList.add("w3-right");
 						document.getElementById("message").appendChild(div);			
 					  
 					  switch (x) {
 					  case "hello":
-					    day = "Sunday";
+					    day = "Hi";
 					    break;
-					  case 1:
-					    day = "Monday";
+					  case "my name":
+					    day = "Booban";
 					    break;
-					  case 2:
-					    day = "Tuesday";
+					  case "this?":
+					    day = "Simple chat bot: I want to use JS";
 					    break;
-					  case 3:
-					    day = "Wednesday";
+					  case "ok":
+					    day = "Anything else?";
 					    break;
-					  case 4:
-					    day = "Thursday";
+					  case "time":
+					    day = getTime;
 					    break;
 					  case 5:
 					    day = "Friday";
@@ -85,7 +95,8 @@
 						div.style.borderRadius="10px";
 						div.style.float="left";
 						div.style.boxShadow="0 4px 8px 0 rgba(0,0,0,0.2)";
-						div.style.margin = "10px";				
+						div.style.margin = "10px";
+						div.style.backgroundColor = "#fff"
 						div.innerHTML = day;
 						day="";
 						div.classList.add("w3-left");
